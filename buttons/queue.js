@@ -2,7 +2,7 @@ const { EmbedBuilder } = require('discord.js');
 const { Translate } = require('../process_tools');
 
 module.exports = async ({ client, inter, queue }) => {
-    if (!queue?.isPlaying()) return inter.editReply({ content: await Translate(`No music currently playing... try again ? <❌>`) });
+    if (!queue?.isPlaying()) return inter.editReply({ content: await Translate(`没有音乐在播啊， 你傻逼把 ? <❌>`) });
     if (!queue.tracks.toArray()[0]) return inter.editReply({ content: await Translate(`No music in the queue after the current one <${inter.member}>... try again ? <❌>`) });
 
     const methods = ['', '🔁', '🔂'];
