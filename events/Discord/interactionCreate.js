@@ -2,22 +2,37 @@ const { EmbedBuilder, InteractionType } = require('discord.js');
 const { useQueue } = require('discord-player');
 const { Translate } = require('../../process_tools');
 
-module.exports = async (client, inter) => {
 
-    // ephemeral: true means that the response is only visible to the user who triggered the command
-    await inter.deferReply({ ephemeral: false });
+module.exports = async (client, inter) => {
 
     if (inter.type === InteractionType.ApplicationCommand) {
         const DJ = client.config.opt.DJ;
         const command = client.commands.get(inter.commandName);
-
         const errorEmbed = new EmbedBuilder().setColor('#ff0000');
 
+        // check if command exists first
         if (!command) {
-            errorEmbed.setDescription(await Translate('<❌> | Error!'));
-            inter.editReply({ embeds: [errorEmbed], ephemeral: false });
-            return client.slash.delete(inter.commandName);
+            await inter.reply({
+                embeds: [errorEmbed.setDescription(await Translate('<❌> | Error!'))],
+                ephemeral: false
+            });
+            return;
         }
+
+        // handle different types of commands
+        const question = inter.options.getString('question');
+        if (question) {
+            // For ask command
+            await inter.reply({
+                content: `您问了: "${question}"\n\n虽然我是AI但我也要思考一下...🤔`,
+                ephemeral: false // make it visible to everyone
+            });
+        } else {
+            // for all other commands (include play)
+            await inter.deferReply({ ephemeral: false });
+        }
+
+        // handle voice channel validation
         if (command.voiceChannel) {
             if (!inter.member.voice.channel) {
                 errorEmbed.setDescription(await Translate(`<❌> | 你不在频道`));
@@ -35,6 +50,8 @@ module.exports = async (client, inter) => {
         const customId = inter.customId;
         if (!customId) return;
 
+        await inter.deferReply({ ephemeral: false });
+
         const queue = useQueue(inter.guild);
         const path = `../../buttons/${customId}.js`;
 
@@ -42,4 +59,4 @@ module.exports = async (client, inter) => {
         const button = require(path);
         if (button) return button({ client, inter, customId, queue });
     }
-}
+};
