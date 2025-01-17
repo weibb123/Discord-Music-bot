@@ -8,8 +8,6 @@ npm install .
 node main.js
 ```
 
-https://github.com/ZerioDev/Music-bot/tree/master
-
 Small scale music bot for private personal discord community
 
 
