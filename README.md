@@ -12,6 +12,12 @@ Small scale music bot for private personal discord community
 
 Make sure to create .env in the root directory.
 
+```
+DISCORD_TOKEN = ''
+GUILD_ID = ""
+GLHF_API_KEY = 
+```
+
 
 
 
