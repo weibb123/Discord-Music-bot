@@ -18,6 +18,14 @@ GUILD_ID = ""
 GLHF_API_KEY = 
 ```
 
+Discord_token can be accessed from Discord developer portal
+
+Guild_id is the discord server ID to place the bot..
+
+GLHF_API_KEY was the LLM service used here. You are free to use other providers if you need.
+
+
+
 
 
 
