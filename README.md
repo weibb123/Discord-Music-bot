@@ -10,6 +10,8 @@ node main.js
 
 Small scale music bot for private personal discord community
 
+Make sure to create .env in the root directory.
+
 
 
 
