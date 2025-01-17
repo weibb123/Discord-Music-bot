@@ -24,6 +24,8 @@ Guild_id is the discord server ID to place the bot..
 
 GLHF_API_KEY was the LLM service used here. You are free to use other providers if you need.
 
+To run it locally, you might need to install ffmpegg
+
 
 
 
