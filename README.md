@@ -5,13 +5,15 @@ Support music at first then later added AI queries feature for discord. You need
 
 ```
 npm install .
-node main.js```
-
-## Actknowledgement
-Thanks for ZerioDev for open-source music bot to help start off the project.
+node main.js
+```
 
 https://github.com/ZerioDev/Music-bot/tree/master
 
 Small scale music bot for private personal discord community
+
+
+
+
 
 
