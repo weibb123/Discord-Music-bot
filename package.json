@@ -3,6 +3,7 @@
     "@discordjs/opus": "^0.9.0",
     "@discordjs/voice": "^0.17.0",
     "@distube/yt-dlp": "^2.0.1",
+    "axios": "^1.7.9",
     "discord-player": "^6.7.1",
     "discord-player-youtubei": "^1.3.4",
     "discord.js": "^14.16.3",
@@ -14,7 +15,9 @@
     "openai": "^4.77.3",
     "play-dl": "^1.9.7",
     "pretty-ms": "^9.1.0",
+    "technicalindicators": "^3.1.0",
     "translate": "^3.0.1",
+    "yahoo-finance2": "^2.13.3",
     "ytdl-core": "^4.11.5"
   }
 }
