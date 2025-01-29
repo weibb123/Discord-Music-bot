@@ -1,5 +1,9 @@
 ## Functionality
-Support music at first then later added AI queries feature for discord. You need .env to make it all happen.
+Support music
+
+AI queries with DeepSeekV3
+
+Track stocks from Yahoofinance and return signals such as MACD/ RSI.
 
 ## Starting
 
